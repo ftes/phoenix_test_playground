@@ -3,6 +3,7 @@
 
 @import "tailwindcss" source(none);
 @import "tom-select/dist/css/tom-select.css";
+@import "quill/dist/quill.snow.css";
 @source "../css";
 @source "../js";
 @source "../../lib/my_app_web";

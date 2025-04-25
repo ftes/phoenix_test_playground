@@ -15,15 +15,15 @@ defmodule MyAppWeb.PostLive.Form do
 
       <.form for={@form} id="post-form" phx-change="validate" phx-submit="save">
         <.input field={@form[:title]} type="text" label="Title" />
-        <label for="category">Category</label>
         <.input
           field={@form[:category]}
-          id="category"
           type="select"
+          label="Category"
           prompt="Choose a value"
           phx-hook="TomSelect"
           options={Ecto.Enum.values(MyApp.Blog.Post, :category)}
         />
+        <.input field={@form[:body]} label="Body" phx-hook="Quill" />
         <footer>
           <.button phx-disable-with="Saving..." variant="primary">Save Post</.button>
           <.button navigate={return_path(@return_to, @post)}>Cancel</.button>

@@ -5,6 +5,7 @@ defmodule MyApp.Blog.Post do
   schema "posts" do
     field :title, :string
     field :category, Ecto.Enum, values: [:sports, :movies]
+    field :body, :string
 
     timestamps(type: :utc_datetime)
   end
@@ -12,7 +13,7 @@ defmodule MyApp.Blog.Post do
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:title, :category])
+    |> cast(attrs, [:title, :category, :body])
     |> validate_required([:title, :category])
   end
 end
