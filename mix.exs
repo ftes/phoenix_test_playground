@@ -58,7 +58,8 @@ defmodule MyApp.MixProject do
       {:gettext, "~> 0.26"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.5"}
+      {:bandit, "~> 1.5"},
+      {:phoenix_test, "~> 0.6.0", only: :test, runtime: false}
     ]
   end
 
