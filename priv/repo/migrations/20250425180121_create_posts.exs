@@ -6,6 +6,7 @@ defmodule MyApp.Repo.Migrations.CreatePosts do
       add :title, :string
       add :category, :string
       add :tags, {:array, :string}
+      add :price, :integer
       add :body, :binary
 
       timestamps(type: :utc_datetime)

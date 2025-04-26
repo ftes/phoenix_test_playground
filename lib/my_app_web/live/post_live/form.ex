@@ -33,6 +33,7 @@ defmodule MyAppWeb.PostLive.Form do
           data-config={~s|{"create": true}|}
           options={Enum.uniq(["one", "two" | @form[:tags].value || []])}
         />
+        <.input field={@form[:price]} label="Price" phx-hook="Monetary" />
         <.input field={@form[:body]} label="Body" phx-hook="Quill" />
         <footer>
           <.button phx-disable-with="Saving..." variant="primary">Save Post</.button>
