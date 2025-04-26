@@ -3,8 +3,8 @@ defmodule MyAppWeb.Features.BlogTest do
   use MyAppWeb.ConnCase, async: true
   import PhoenixTest
 
-  describe "tom-select" do
-    test "single select with static data handled like vanilla select" do
+  describe "progressive enhancement of inputs via JS hooks" do
+    test "vanilla PhoenixTest input functions" do
       build_conn()
       |> visit(~p"/posts/new")
       |> fill_in("Title", with: "Hey!")
