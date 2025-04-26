@@ -8,6 +8,8 @@ defmodule MyAppWeb.Features.BlogTest do
       |> visit(~p"/posts/new")
       |> fill_in("Title", with: "Hey!")
       |> select("Category", option: "sports", exact: false)
+      |> select("Tags", option: "one", exact: false)
+      |> select("Tags", option: "two", exact: false)
       |> fill_in("Body", with: "Quill delta")
       |> submit()
     end

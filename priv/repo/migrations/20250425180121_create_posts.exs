@@ -5,6 +5,7 @@ defmodule MyApp.Repo.Migrations.CreatePosts do
     create table(:posts) do
       add :title, :string
       add :category, :string
+      add :tags, {:array, :string}
       add :body, :binary
 
       timestamps(type: :utc_datetime)

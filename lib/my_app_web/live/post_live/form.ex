@@ -23,6 +23,16 @@ defmodule MyAppWeb.PostLive.Form do
           phx-hook="TomSelect"
           options={Ecto.Enum.values(MyApp.Blog.Post, :category)}
         />
+        <.input
+          field={@form[:tags]}
+          type="select"
+          multiple
+          label="Tags"
+          prompt="Type to create"
+          phx-hook="TomSelect"
+          data-config={~s|{"create": true}|}
+          options={Enum.uniq(["one", "two" | @form[:tags].value || []])}
+        />
         <.input field={@form[:body]} label="Body" phx-hook="Quill" />
         <footer>
           <.button phx-disable-with="Saving..." variant="primary">Save Post</.button>
